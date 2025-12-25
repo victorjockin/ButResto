@@ -1,27 +1,206 @@
-# PrjRestaurant
+= Document de conception
+Gestionnaire de Restaurant
+BUT Informatique – IUT de Blagnac  
+R4.A.10 Complément Web  
+Victor Jockin – Groupe 2B
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
+:toc:
+:toclevels: 3
+:sectnums:
 
-## Development server
+== Fonctionnalités développées
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+=== Fonctionnalités minimales
 
-## Code scaffolding
+==== Gestion des menus
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* ✔ 1.1 Visualiser la liste des menus
+* ✔ 1.2 Visualiser le détail d’un menu (avec la liste de ses plats)
+* ✔ 1.3 Créer un menu
+* ✔ 1.4 Modifier un menu
+* ✔ 1.5 Supprimer un menu
 
-## Build
+==== Gestion des plats
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* ✔ 2.1 Ajouter un plat dans un menu
+* ✔ 2.2 Modifier un plat dans un menu
+* ✔ 2.3 Supprimer un plat d’un menu
 
-## Running unit tests
+=== Fonctionnalités supplémentaires / bonus
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+==== Gestion des menus
 
-## Running end-to-end tests
+* ✔ 1.6 Visualiser le nombre total de calories d’un menu
+* ✔ 1.7 Visualiser le nombre moyen de calories par plat dans un menu
+* ✔ 1.8 Filtrer les menus selon leur statut (Actif / Inactif)
+* ✔ 1.9 Filtrer les menus selon leur date de création
+* ✔ 1.10 Filtrer les menus par mots clés
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+==== Gestion des plats
 
-## Further help
+* ✔ 2.4 Utiliser des modèles de plats (plats prédéfinis) lors de l’ajout d’un plat dans un menu avec suggestion selon la saisie
+* ✔ 2.5 Filtrer les modèles de plats par mots clés
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+==== Gestion des commandes
+
+* ✔ 3.1 Visualiser la liste des commandes servies et non servies
+* ✔ 3.2 Visualiser le statut d’une commande, le statut des plats qui la composent et l’heure d’enregistrement
+* ✔ 3.3 Ajouter une commande à partir d’un menu actif
+* ✔ 3.4 Marquer un plat comme servi dans une commande
+* ✔ 3.5 Marquer une commande entière comme servie
+* ✔ 3.6 Clôturer une commande servie
+* ✔ 3.7 Effacer / nettoyer la liste des commandes à servir
+* ✔ 3.8 Effacer / nettoyer la liste des commandes servies
+
+==== Accessibilité
+
+* ✔ 4.1 Sélectionner la langue de l’application (Français ou Anglais)
+
+== Architecture de l’application
+
+Cette section décrit le contenu du répertoire `src/app`.
+
+=== constants/
+
+* `food-icons.const.ts` : Liste d’icônes Font Awesome représentant de la nourriture, utilisée pour le Hero Header.
+
+=== content/
+
+==== dish/
+
+* `dish-item/` : Plat dans une liste (1.2, 2.1, 2.2, 2.3)
+* `dish-list/` : Liste des plats d’un menu (1.2, 1.6, 1.7, 2.1, 2.2, 2.3)
+
+==== dish-order/
+
+* `dish-order-item/` : Plat dans une commande (3.1, 3.2, 3.4)
+* `dish-order-list/` : Liste des plats d’une commande (3.1, 3.4)
+
+==== dish-template/
+
+* `dish-template-list/` : Liste des modèles de plats
+* `dish-template-suggestion/` : Suggestion de modèle de plat
+
+==== hero/
+
+* En-tête principal de la page d’accueil
+
+==== menu/
+
+* `menu-edition-form/` : Formulaire d’édition (1.3, 1.4)
+* `menu-item/` : Menu dans une liste (1.1, 1.4, 1.5, 1.8, 1.9, 1.10)
+* `menu-list/` : Liste des menus
+* `menu-status-badge/` : Badge de statut (1.1, 1.2)
+* `menu-view/` : Détail d’un menu (1.2, 1.4, 1.5, 1.6, 1.7)
+
+==== menu-order/
+
+* `menu-order-id-badge/` : Badge du numéro de commande
+* `menu-order-item/` : Commande dans une liste
+* `menu-order-list/` : Liste des commandes
+
+==== order/
+
+* `add-order-form/` : Formulaire d’ajout d’une commande
+* `order-status-badge/` : Badge de statut de commande
+
+=== dialog/
+
+* `confirmation-dialog/` : Boîte de confirmation (1.5)
+
+=== directive/
+
+* `auto-width.directive.ts` : Ajuste automatiquement la largeur des colonnes
+
+=== enum/
+
+* `dialog-state.ts`
+* `language.ts`
+* `loading-status.ts`
+* `menu-status.ts`
+* `order-status.ts`
+* `processing.ts`
+* `processing-status.ts`
+* `view-mode.ts`
+
+=== include/
+
+* `header/` : En-tête avec logo, navigation et langues
+* `footer/` : Pied de page
+
+=== model/
+
+* `dish.ts`
+* `dish-order.ts`
+* `menu.ts`
+* `menu-order.ts`
+
+=== pipe/
+
+* `formated-date.pipe.ts`
+* `split-for-highlight.pipe.ts`
+* `translate.pipe.ts`
+
+=== pop-up/
+
+* `loading-pop-up/`
+* `processing-pop-up/`
+
+=== service/
+
+* `date.service.ts`
+* `dish.service.ts`
+* `filtering.service.ts`
+* `menu.service.ts`
+* `translation.service.ts`
+
+=== ui/
+
+* `drop-down-menu/` : Menu déroulant personnalisé
+
+=== utility/
+
+* `object-conversion.ts`
+* `text-normalisation.ts`
+
+== Ergonomie de l’application
+
+L’en-tête de l’application permet d’accéder aux pages :
+* Accueil
+* Commandes
+* Menus
+
+=== Routes principales
+
+[cols="1,2,3", options="header"]
+|===
+| Route | Page courante | Pages accessibles
+
+| `/`
+| Accueil
+| Commandes, Ajouter une commande → Nouvelle commande
+
+| `/menus`
+| Menus
+| Ajouter un menu → Nouveau menu
+
+| `/menu/new`
+| Nouveau menu
+| Ajouter / Annuler → Menus
+
+| `/menu/{id}`
+| Détail du menu
+| Modifier → Édition, Supprimer, Retour → Menus
+
+| `/menu/{id}/edit`
+| Édition du menu
+| Enregistrer / Annuler → Détail du menu
+
+| `/orders`
+| Commandes
+| Ajouter une commande → Nouvelle commande
+
+| `/order/new`
+| Nouvelle commande
+| Ajouter / Annuler → Commandes
+|===
