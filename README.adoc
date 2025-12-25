@@ -11,7 +11,7 @@ Victor Jockin – Groupe 2B
 [IMPORTANT]
 ====
 📄 *Document original (PDF)*  
-(https://github.com/victorjockin/ButResto/blob/main/Document%20de%20conception.pdf)[Document de conception – PDF]
+https://github.com/victorjockin/ButResto/blob/main/Document%20de%20conception.pdf[Document de conception – PDF]
 ====
 
 == Fonctionnalités développées
@@ -210,5 +210,6 @@ L’en-tête de l’application permet d’accéder aux pages :
 | Nouvelle commande
 | Ajouter / Annuler → Commandes
 |===
+
 
 
