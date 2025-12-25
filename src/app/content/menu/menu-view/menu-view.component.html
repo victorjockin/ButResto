@@ -1,0 +1,64 @@
+<div *ngIf="loadingStatus != 'SUCCESS'" class="full-screen">
+  <app-loading-pop-up
+    [loadingStatus]="loadingStatus"
+    (loadingCompleted)="onLoadingCompleted()">
+  </app-loading-pop-up>
+</div>
+<div class="centered-content">
+  <div *ngIf="this.loadingStatus == 'SUCCESS'" class="section section-medium section-gap-lg">
+    <div class="section-title">
+      <div id="menuNameIdAndStatus">
+        <div id="menuNameAndId">
+          <h1>{{ this.menu.name }}</h1>
+          <span id="menuId">#{{ this.menu.id }}</span>
+        </div>
+        <div id="menuStatusBadgeContainer">
+          <app-menu-status-badge [status]="this.menu.status"></app-menu-status-badge>
+        </div>
+      </div>
+      <hr class="thick-hr"/>
+      <div>
+        {{ 'content.menu.created-on' | translate }} {{ this.menu.creationDate | formatedDate }}
+      </div>
+    </div>
+    <div class="section section-gap-sm">
+      <div class="section-title">
+        <h3>{{ 'content.menu.description' | translate }}</h3>
+        <hr class="thin-hr"/>
+      </div>
+      <p>{{ this.menu.description }}</p>
+    </div>
+    <div class="section section-gap-md">
+      <div class="section-title">
+        <h3>{{ 'content.menu.composition' | translate }}</h3>
+        <hr class="thin-hr"/>
+      </div>
+      <app-dish-list
+        [dishes]="this.menuDishes"
+        [dishTemplates]="this.dishTemplates">
+      </app-dish-list>
+    </div>
+    <div class="section-footer">
+      <div class="options">
+        <button class="as-button with-hover" (click)="onModify()">
+          {{ 'actions.modify' | translate }}
+        </button>
+        <button class="as-button with-hover" (click)="onRemove()">
+          {{ 'actions.remove' | translate }}
+        </button>
+      </div>
+      <hr class="in-section-footer"/>
+      <a class="as-button with-hover tertiary" [routerLink]="'/menus'">
+        {{ 'navigation.back' | translate }}
+      </a>
+    </div>
+  </div>
+</div>
+<app-confirmation-dialog
+  [openDialogEvent]="openRemovalConfirmationDialogEvent"
+  (onConfirmEvent)="onDelete($event)">
+</app-confirmation-dialog>
+<app-processing-pop-up *ngIf="this.processing"
+  [processing]="this.processing"
+  [processingStatus]="this.processingStatus">
+</app-processing-pop-up>

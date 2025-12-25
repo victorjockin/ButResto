@@ -1,0 +1,23 @@
+#dishName {
+  width: var(--menu-order-item-name);
+}
+#status {
+  width: var(--menu-order-item-status);
+  justify-content: right;
+}
+
+:host .item, :host .item-action {
+  background-color: transparent;
+}
+:host .item-container {
+  background-color: var(--neutral-color-l);
+}
+:host .item-container:hover {
+  background-color: var(--neutral-color-l-hover);
+}
+:host(.odd) .item-container {
+  background-color: var(--neutral-color-l-odd);
+}
+:host(.odd) .item-container:hover {
+  background-color: var(--neutral-color-l-hover);
+}

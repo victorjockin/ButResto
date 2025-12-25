@@ -1,0 +1,19 @@
+<div class="item-container child-item">
+  <div class="item order">
+    <div id="dishName" class="item-name">{{ dishOrder.dishName }}</div>
+    <div id="status" class="item-info">
+      <app-order-status-badge
+        [status]="dishOrder.status"
+        [servedAt]="dishOrder.servedAt">
+      </app-order-status-badge>
+    </div>
+  </div>
+  <div class="item-actions">
+    <button *ngIf="dishOrder.status=='NOT-SERVED'" class="item-action" (click)="onMarkAsServed()">
+      <i class="fa-solid fa-check"></i>
+    </button>
+    <div *ngIf="dishOrder.status=='SERVED'" class="item-action inert">
+      <i class="fa-regular fa-circle-check checked"></i>
+    </div>
+  </div>
+</div>

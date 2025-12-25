@@ -1,0 +1,180 @@
+
+/* Boutons */
+
+/* Date de dernière modification : Lundi 17 février 2025 */
+
+/* Auteur : Victor Jockin (Grp. 2B) */
+
+button, .as-button {
+    display: flex;
+    box-sizing: border-box;
+    padding: 0px var(--button-horizontal-padding);
+    width: var(--button-width);
+    height: var(--button-height);
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: var(--elements-border-radius);
+    background-color: var(--primary-color-l);
+    color: #fff;
+    font-family: var(--regular-font);
+    font-size: var(--button-font-size);
+    text-decoration: none;
+    user-select: none;
+    text-wrap: nowrap;
+}
+button:hover, .as-button:hover {
+    cursor: pointer;
+}
+
+button:disabled {
+    color: var(--disabled-text-color);
+    background-color: var(--primary-color-disabled);
+    pointer-events: none;
+}
+button.small {
+    height: var(--small-button-height);
+    font-size: var(--small-button-font-size);
+}
+
+button.validate, .as-button.validate {
+    background-color: var(--validate-color);
+    color: #fff;
+}
+button.validate:hover, .as-button.validate:hover {
+    background-color: var(--validate-color-hover);
+}
+button.validate:disabled, .as-button.validate:disabled {
+    background-color: var(--validate-color-disabled);
+    color: var(--validate-text-color-disabled);
+}
+
+.button-content {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    gap: var(--button-horizontal-gap);
+    justify-content: center;
+    align-items: center;
+    line-height: var(--button-font-size);
+    font-family: var(--regular-font);
+    font-size: var(--button-font-size);
+}
+.button-label {
+    display: var(--with-icon-button-label-display);
+}
+
+.discreet-button {
+    height: var(--discreet-button-height);
+    font-size: var(--discreet-button-font-size);
+}
+
+.icon-button {
+    padding: 0px;
+    width: 25px;
+    height: 25px;
+    font-size: 0.8rem;
+}
+
+/* ====================================================================== */
+
+/* drop down menu button */
+/* --------------------- */
+
+.drop-down-menu-button {
+    padding: 0rem;
+}
+.drop-down-menu-button .button-content {
+    padding: 0 var(--button-horizontal-padding);
+    justify-content: left;
+}
+.drop-down-menu-button .button-icon {
+    display: flex;
+    box-sizing: border-box;
+    padding: 0rem var(--button-horizontal-padding);
+    width: 3rem;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.drop-down-menu {
+    position: relative;
+    display: inline-block;
+}
+.drop-down-menu-options {
+    position: absolute;
+    box-sizing: border-box;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border: 1.5px solid var(--neutral-color-l);
+    background-color: var(--neutral-color-d);
+    color: #fff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 3px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+.drop-down-menu-options li {
+    display: flex;
+    min-height: 45px;
+    padding: 0px 10px !important;
+    box-sizing: border-box;
+    align-items: center;
+    cursor: pointer;
+}
+.drop-down-menu-options li:hover {
+    background-color: var(--neutral-color-l);
+}
+.drop-down-menu-options li.selected {
+    background-color: var(--neutral-color-m);
+}
+
+/* ====================================================================== */
+
+.with-icon-button {
+    display: flex;
+    padding: var(--with-icon-button-horizontal-padding);
+    min-width: var(--with-icon-button-width);
+}
+.only-icon-button {
+    display: flex;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-width: var(--only-icon-button-width);
+}
+
+.secondary {
+    background-color: var(--secondary-color);
+}
+.secondary:disabled {
+    background-color: var(--secondary-color-disabled);
+    color: #888;
+}
+
+.tertiary {
+    background-color: var(--tertiary-color);
+}
+.tertiary:disabled {
+    background-color: var(--tertiary-color-disabled);
+}
+
+.with-hover:hover {
+    background-color: var(--primary-color-d);
+}
+.secondary.with-hover:hover {
+    background-color: var(--secondary-color-hover);
+}
+.tertiary.with-hover:hover {
+    background-color: var(--tertiary-color-hover);
+}
+
+.clickable {
+    cursor: pointer;
+}

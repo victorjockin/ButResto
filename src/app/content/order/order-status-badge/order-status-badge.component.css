@@ -1,0 +1,6 @@
+.served-order {
+  background-color: var(--active-menu-color);
+}
+.not-served-order {
+  background-color: var(--inactive-menu-color);
+}

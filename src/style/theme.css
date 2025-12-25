@@ -1,0 +1,319 @@
+
+/* Paramètres du thème visuel */
+
+/* Date de dernière modification : Dimanche 16 février 2025 */
+
+/* Auteur : Victor Jockin (Grp. 2B) */
+
+:root {
+
+    /* fonts */
+    /* ----- */
+
+    --regular-font:     'Segoe UI';
+    --italic-font:      'Segoe UI Italic';
+    --bold-font:        'Segoe UI Bold';
+    --bold-italic-font: 'Segoe UI Bold Italic';
+
+    /* ====================================================================== */
+
+    /* font sizes */
+    /* ---------- */
+
+    --body-font-size:            17px;
+    --header-font-size:          20px;
+
+    --h1-font-size:              32px;
+    --h2-font-size:              26px;
+    --h3-font-size:              20px;
+    --h4-font-size:              17px;
+
+    --app-name-font-size:        22px;
+
+    --badge-font-size:           15px;
+    --small-badge-font-size:     13px;
+
+    --button-font-size:          17px;
+    --small-button-font-size:    13px;
+    --discreet-button-font-size: 14px;
+
+    --small-item-font-size:      14px;
+    --item-action-font-size:     20px;
+
+    --options-font-size:         20px;
+
+    --suggestion-font-size:      15px;
+
+    /* ====================================================================== */
+
+    /* displays */
+    /* -------- */
+
+    --icon-button-label-display: flex;
+
+    /* ====================================================================== */
+
+    /* directions */
+    /* ---------- */
+
+    --section-footer-direction: column;
+    --section-footer-options-direction: row;
+    --pair-container-direction: row;
+    --search-bar-direction:     row;
+
+    /* ====================================================================== */
+
+    /* sizes */
+    /* ----- */
+
+    --loading-pop-up-width:         25rem;
+    --confirmation-dialog-width:    30rem;
+
+    --medium-section-width:         600px;
+
+    --form-element-height:          50px;
+
+    --search-bar-button-width:      160px;
+
+    --button-height:                50px;
+    --small-button-height:          30px;
+    --discreet-button-height:       30px;
+    --with-icon-button-width:       fit-content;
+    --only-icon-button-width:       50px;
+
+    --item-height:                       50px;
+    --item-action-width:                 50px;
+    --small-item-height:                 25px;
+    --item-content-element-height:       35px;
+    --item-small-content-element-height: 25px;
+
+    --menu-status-badge-width:      100px;
+
+    --spinner-size:                 2.5rem;
+
+    /* ====================================================================== */
+
+    /* ratios */
+    /* ------ */
+
+    --item-id: 60px;
+
+    --menu-item-name: 50%;
+    --menu-item-creation-date: 25%;
+    --menu-item-status: 25%;
+
+    --menu-order-item-name: 70%;
+    --menu-order-item-status: 30%;
+
+    --dish-item-name: 80%;
+    --dish-item-calories: 20%;
+
+    /* ====================================================================== */
+
+    /* margins */
+    /* ------- */
+
+    /* ====================================================================== */
+
+    /* paddings */
+    /* -------- */
+
+    --page-horizontal-padding:             80px;
+    --page-vertical-padding:               40px;
+    --page-vertical-padding-plus:          70px;
+
+    --hero-padding:                        2rem;
+
+    --pop-up-horizontal-padding:           2rem;
+    --pop-up-vertical-padding:             1.75rem;
+
+    --button-horizontal-padding:           1.25rem;
+    --with-icon-button-horizontal-padding: 1.25rem;
+
+    --item-horizontal-padding:             20px;
+
+    /* ====================================================================== */
+
+    /* gaps */
+    /* ---- */
+
+    --pair-container-gap:     40px;
+
+    --pop-up-gap:             10px;
+
+    --section-vertical-gap:   0rem;
+
+    --form-gap:               2rem;
+    --form-fields-gap:        2rem;
+
+    --button-horizontal-gap:  0.8rem;
+    --gap-between-buttons:    10px;
+
+    --item-list-vertical-gap: 10px;
+    --item-horizontal-gap:    20px;
+
+    --search-bar-h-gap: 10px;
+
+    /* ====================================================================== */
+
+    /* borders */
+    /* ------- */
+
+    --form-field-border: 1px solid #fff;
+    --form-field-border-primary: 3px solid var(--primary-color-l);
+    --form-field-border-secondary: 3px solid var(--secondary-color);
+
+    --item-border-left-width: 5px solid;
+    --item-border-left-color: #000;
+
+    /* ====================================================================== */
+
+    /* border-radius */
+    /* ------------- */
+
+    --elements-border-radius: 3px;
+    --pop-up-border-radius:   0.5rem;
+
+    /* ====================================================================== */
+
+    /* colors */
+    /* ------ */
+
+    --app-background-color: #121212;
+    --app-text-color: #fff;
+
+    --popup-background-color: #383838;
+
+    --disabled-text-color: #666;
+
+    --validate-color: #28a745;
+    --validate-color-hover: #218838;
+    --validate-color-disabled: #a5d6a7;
+    --validate-text-color-disabled: #e0e0e0;
+
+    --neutral-color-l: #333333;
+    --neutral-color-l-odd: #3b3b3b;
+    --neutral-color-l-hover: #4a4a4a;
+    --neutral-color-m: #292929;
+    --neutral-color-d: #1e1e1e;
+    --neutral-color-d-hover: #242424;
+
+    --primary-color-l: #1b1b2f;
+    --primary-color-d: #161627;
+    --primary-color-disabled: #151523;
+
+    --secondary-color: #8d3daf;
+    --secondary-color-hover: #a34bd1;
+    --secondary-color-disabled: #5c2a6d;
+
+    --tertiary-color: #a1887f;
+    --tertiary-color-hover: #bcaaa4;
+    --tertiary-color-disabled: #5d4037;
+
+    --menu-color: #4c9f70;
+    --order-color: #8d3daf;
+
+    --active-menu-color: #32cd32;
+    --inactive-menu-color: #8b1c1c;
+
+    --view-mode-color: #43d17a;
+    --addition-mode-color: #00bcd4;
+    --edition-mode-color: #ff9800;
+    --deletion-mode-color: #e53935;
+
+    --spinner-color-1: #8d3daf;
+    --spinner-color-2: #00bcd4;
+}
+
+@media screen and (max-width: 920px) {
+    :root {
+        
+        /* displays */
+        /* -------- */
+
+        --with-icon-button-label-display: none;
+
+        /* ====================================================================== */
+
+        /* sizes */
+        /* ----- */
+
+        --with-icon-button-width: var(--button-height);
+
+        /* ====================================================================== */
+
+        /* ratios */
+        /* ------ */
+
+        --item-id:                 60px;
+
+        --menu-item-name:          50%;
+        --menu-item-creation-date: 30%;
+        --menu-item-status:        20%;
+
+        /* ====================================================================== */
+
+        /* paddings */
+        /* -------- */
+
+        --page-horizontal-padding: 15px;
+
+        --with-icon-button-horizontal-padding: 0rem;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    :root {
+
+        /* ratios */
+        /* ------ */
+
+        --menu-item-name:          80%;
+        --menu-item-status:        20%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    :root {
+                
+        /* directions */
+        /* ---------- */
+
+        --pair-container-direction: column;
+        --search-bar-direction:     column;
+
+        /* ====================================================================== */
+
+        /* ratios */
+        /* ------ */
+
+        --menu-item-name: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    :root {
+        
+        /* sizes */
+        /* ----- */
+
+        --loading-pop-up-width: 85vw;
+
+        /* ====================================================================== */
+
+        /* directions */
+        /* ---------- */
+        
+        --section-footer-options-direction: column;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    :root {
+        
+        /* sizes */
+        /* ----- */
+
+        --item-height: 100px;
+    }
+}

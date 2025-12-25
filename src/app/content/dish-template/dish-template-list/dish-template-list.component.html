@@ -1,0 +1,19 @@
+<div class="section section-gap-sm">
+  <div class="section-title">
+    <div id="dishTemplatesListHeader">
+      <h4>{{ 'content.dish.templates' | translate }}</h4>
+      <button class="icon-button" (click)="toggleShowDishTemplates()">
+        <i *ngIf="!showDishTemplates" class="fa-solid fa-angle-down"></i>
+        <i *ngIf="showDishTemplates" class="fa-solid fa-angle-up"></i>
+      </button>
+    </div>
+  </div>
+  <div *ngIf="showDishTemplates" class="suggestion-list">
+    <app-dish-template-suggestion
+      *ngFor="let d of dishTemplates"
+      [dish]="d"
+      [dishTemplatesFilter]="dishTemplatesFilter"
+      (click)="onSelectDishTemplate(d)">
+    </app-dish-template-suggestion>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+#dishNameColumn {
+    width: var(--dish-item-name);
+}
+#dishCaloriesColumn {
+    display: flex;
+    width: var(--dish-item-calories);
+}
+
+#stats {
+    display: flex;
+}
+#statsShort {
+    display: none;
+}
+
+@media screen and (max-width: 450px) {
+    #stats {
+        display: none;
+    }
+    #statsShort {
+        display: flex;
+    }
+}

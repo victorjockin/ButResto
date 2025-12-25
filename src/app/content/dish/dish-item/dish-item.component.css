@@ -1,0 +1,16 @@
+#name {
+    width: var(--dish-item-name);
+}
+#calories {
+    display: flex;
+    width: var(--dish-item-calories);
+}
+#caloriesUnit {
+    display: flex;
+}
+
+@media screen and (max-width: 450px) {
+    #caloriesUnit {
+        display: none;
+    }
+}

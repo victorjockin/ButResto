@@ -1,0 +1,44 @@
+<header>
+  <div id="appName">
+    <a class="app-name clickable unselectable" (click)="onClickOnAppName()">
+      <i class="fa-solid fa-burger"></i>&nbsp;ButResto
+    </a>
+  </div>
+  <div class="nav-bar">
+    <a id="appNameInNavBar" class="app-name clickable unselectable" (click)="onClickOnAppName()">
+      <i class="fa-solid fa-burger"></i>&nbsp;ButResto
+    </a>
+    <div class="pages">
+      <a class="header-button unselectable"
+        routerLink="/"
+        [class.selected]="router.url == '/'">
+        <span class="icon"><i class="fa-solid fa-house"></i></span>
+        <span class="text">{{ 'navigation.home' | translate }}</span>
+      </a>
+      <a class="header-button unselectable"
+        routerLink="/orders"
+        [class.selected]="router.url == '/orders'">
+        <span class="icon"><i class="fa-solid fa-list-check"></i></span>
+        <span class="text">{{ 'content.order.orders' | translate }}</span>
+      </a>
+      <a class="header-button unselectable"
+        routerLink="/menus"
+        [class.selected]="router.url === '/menus'">
+        <span class="icon"><i class="fa-solid fa-utensils"></i></span>
+        <span class="text">{{ 'content.menu.menus' | translate }}</span>
+      </a>
+    </div>
+  </div>
+  <div class="options">
+    <div class="flag-icon-container clickable"
+      [class.selected]="currentLanguage == languages.FRENCH"
+      (click)="changeLanguage(languages.FRENCH)">
+      <img class="flag-icon unselectable" src="assets/img/flags/fr.svg" alt="FR"/>
+    </div>
+    <div class="flag-icon-container clickable"
+      [class.selected]="currentLanguage == languages.ENGLISH"
+      (click)="changeLanguage(languages.ENGLISH)">
+      <img class="flag-icon unselectable" src="assets/img/flags/en.svg" alt="EN"/>
+    </div>
+  </div>
+</header>

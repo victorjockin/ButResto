@@ -1,0 +1,90 @@
+
+/* Pop-ups */
+
+/* Date de dernière modification : Samedi 1er mars 2025 */
+
+/* Auteur : Victor Jockin (Grp. 2B) */
+
+.pop-up-background {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.pop-up-background.in {
+    animation: fade-in 0.3s ease-out;
+}
+.pop-up-background.out {
+    background-color: rgba(0, 0, 0, 0);
+    animation: fade-out 0.3s ease-out;
+}
+
+.pop-up {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: var(--pop-up-vertical-padding) 0rem;
+    gap: var(--pop-up-gap);
+    border: none;
+    border-radius: var(--pop-up-border-radius);
+    background-color: var(--popup-background-color);
+    color: var(--app-text-color);
+    box-shadow: 1px 3px 24px -1px rgba(0, 0, 0, 0.2) ;
+}
+.pop-up.loading-pop-up {
+    width: var(--loading-pop-up-width);
+}
+.pop-up.confirmation-dialog {
+    width: var(--confirmation-dialog-width);
+}
+.pop-up.in {
+    transform: translateY(-50px);
+    opacity: 0;
+    animation: slide-in 0.3s ease-out forwards;
+}
+.pop-up.out {
+    transform: translateY(0);
+    opacity: 1;
+    animation: slide-out 0.3s ease-out forwards;
+}
+
+.pop-up.with-additional-vertical-padding {
+    padding: calc(2*var(--pop-up-vertical-padding)) 0rem;
+}
+
+.pop-up-header,
+.pop-up-content,
+.pop-up-footer {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem var(--pop-up-horizontal-padding);
+    box-sizing: border-box;
+}
+.pop-up-header {
+    font-family: var(--bold-font);
+    font-size: var(--header-font-size);
+}
+.pop-up-footer.dialog-options {
+    flex-direction: row;
+    gap: var(--gap-between-buttons)
+}
+.pop-up.centered-content, .pop-up .centered-content {
+    align-items: center;
+    text-align: center;
+}
+
+.dialog-option {
+    width: 100%;
+}
+
+#processing {
+    font-family: var(--bold-font);
+    font-size: 20px;
+}

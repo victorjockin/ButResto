@@ -1,0 +1,95 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "back": "Retour"
+  },
+  "actions": {
+    "add": "Ajouter",
+    "modify": "Modifier",
+    "modifying": "Modifier",
+    "save": "Enregistrer",
+    "remove": "Supprimer",
+    "cancel": "Annuler",
+    "clear": "Effacer",
+    "confirm-removal": "Confirmer la suppression"
+  },
+  "processing": {
+    "addition": "Ajout",
+    "update": "Mise à jour",
+    "deletion": "Suppression",
+    "loading": "Chargement en cours",
+    "in-progress": "en cours",
+    "please-wait": "Merci de patienter quelques instants"
+  },
+  "content": {
+    "restaurant": {
+      "slogan": "Le resto qu'il vous faut !",
+      "opening": "Ouverture prochaine"
+    },
+    "dish": {
+      "dish": "Plat",
+      "dishes": "Plats",
+      "templates": "Modèles de plats",
+      "calories": "Calories",
+      "stats": {
+        "average-calories": "Nombre moyen de calories par plat",
+        "average": "Moyenne",
+        "total-calories": "Nombre total de calories",
+        "total": "Total"
+      },
+      "add": "Ajouter un plat",
+      "remove": "Supprimer le plat",
+      "no-dish": "Aucun plat enregistré",
+      "enter-name": "Entrer le nom du plat",
+      "enter-calories": "Cal."
+    },
+    "menu": {
+      "menu": "Menu",
+      "menus": "Menus",
+      "menu-number": "Numéro",
+      "name": "Nom",
+      "enter-name": "Entrer le nom du menu",
+      "description": "Description",
+      "enter-description": "Entrer une description",
+      "creation-date": "Date de création",
+      "created-on": "Créé le",
+      "status": "Statut",
+      "active": "Actif",
+      "inactive": "Inactif",
+      "composition": "Composition du menu",
+      "add": "Ajouter un menu",
+      "confirm-removal-message": "Souhaitez-vous vraiment supprimer le menu<br/>#{{id}} : {{name}} ?",
+      "new": "Nouveau menu",
+      "saved-menu": "menu enregistré",
+      "saved-menus": "menus enregistrés",
+      "displayed-menus": "menus affichés",
+      "no-menu-saved": "Aucun menu enregistré",
+      "no-menu-found": "Aucun menu trouvé",
+      "no-menu-displayed": "Aucun menu affiché"
+    },
+    "order": {
+      "order": "Commande",
+      "orders": "Commandes",
+      "today-s-orders": "Menus du jour",
+      "status": "Statut",
+      "served": "Servi",
+      "not-served": "Non servi",
+      "ordered-at": "Commandé à",
+      "served-at": "Servi à",
+      "add": "Ajouter une commande",
+      "no-order-saved": "Aucune commande enregistrée",
+      "no-order-to-serve": "Aucune commande à servir",
+      "one-order-to-serve": "commande à servir",
+      "orders-to-serve": "Commandes à servir",
+      "orders-served": "Commandes servies"
+    },
+    "footer": {
+      "rights": "Tous droits réservés",
+      "developed-by": "Développé par"  
+    },
+    "common": {
+      "date": "Date",
+      "keywords": "Mots clés"
+    }
+  }
+}

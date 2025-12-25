@@ -1,0 +1,35 @@
+.search-bar {
+  display: flex;
+  flex-direction: var(--search-bar-direction);
+  gap: var(--search-bar-h-gap);
+  width: 100%;
+}
+
+.search-bar .standard-button {
+  width: var(--search-bar-button-width);
+}
+
+@media screen and (max-width: 576px) {
+  app-drop-down-menu {
+    width: 100%;
+  }
+  .drop-down-menu {
+    width: 100% !important;
+  }
+  .drop-down-menu-button {
+    width: 100% !important;
+  }
+}
+
+.search-bar-input-field {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+.search-bar-input-field input {
+  border-radius: var(--elements-border-radius) 0px 0px var(--elements-border-radius);
+}
+.search-bar-input-field button {
+  border-radius: 0px var(--elements-border-radius) var(--elements-border-radius) 0px;
+}

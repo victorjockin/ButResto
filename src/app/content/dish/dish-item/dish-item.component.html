@@ -1,0 +1,63 @@
+<div [ngClass]="{ 'view-mode'     : this.mode == 'VIEW-MODE',
+                  'addition-mode' : this.mode == 'ADDITION-MODE',
+                  'edition-mode'  : this.mode == 'EDITION-MODE',
+                  'deletion-mode' : this.mode == 'DELETION-MODE' }"
+  class="item-container">
+  <!-- item -->
+  <div *ngIf="this.mode == 'VIEW-MODE'" class="item">
+    <div id="name" class="item-name">{{ this.dish.name }}</div>
+    <div id="calories" class="item-info">
+      <span>{{ this.dish.calories }}</span>
+      <span id="caloriesUnit">&nbsp;cal</span>
+    </div>
+  </div>
+  <div *ngIf="this.mode == 'ADDITION-MODE' || this.mode == 'EDITION-MODE'" class="item">
+    <div id="name" class="item-name">
+      <input id="nameInput" type="text" [(ngModel)]="this.dish.name"
+        (ngModelChange)="onDishNameInputChanges()"
+        placeholder="{{ 'content.dish.enter-name' | translate }}">
+    </div>
+    <div id="calories" class="item-info">
+      <input id="caloriesInput" type="number" min="0" step="1"
+        placeholder="{{ 'content.dish.enter-calories' | translate }}"
+        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+        [(ngModel)]="this.dish.calories">
+    </div>
+  </div>
+  <div *ngIf="this.mode == 'DELETION-MODE'" class="item">
+    <div class="italic">
+      {{ 'content.dish.remove' | translate }} &laquo; <span class="important">{{ this.dish.name }}</span> &raquo; ?
+    </div>
+  </div>
+  <!-- actions -->
+  <div *ngIf="this.mode == 'VIEW-MODE'" class="item-actions">
+    <button class="item-action" (click)="onModify()"><i class="fa-solid fa-pen"></i></button>
+    <button class="item-action" (click)="onRemove()"><i class="fa-solid fa-trash"></i></button>
+  </div>
+  <div *ngIf="this.mode == 'ADDITION-MODE'" class="item-actions">
+    <button class="item-action" (click)="onSaveDish()"
+      [disabled]="!this.dish.name || this.dish.calories == null">
+      <i class="fa-solid fa-check"></i>
+    </button>
+    <button class="item-action" (click)="onCancelSave()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+  <div *ngIf="this.mode == 'EDITION-MODE'" class="item-actions">
+    <button class="item-action" (click)="onValidateChanges()"
+      [disabled]="!this.dish.name || this.dish.calories == null">
+      <i class="fa-solid fa-check"></i>
+    </button>
+    <button class="item-action" (click)="onCancelChanges()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+  <div *ngIf="this.mode == 'DELETION-MODE'" class="item-actions">
+    <button class="item-action" (click)="onConfirmDeletion()">
+      <i class="fa-solid fa-check"></i>
+    </button>
+    <button class="item-action" (click)="onCancelDeletion()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+</div>

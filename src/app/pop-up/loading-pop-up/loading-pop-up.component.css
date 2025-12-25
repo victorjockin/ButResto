@@ -1,0 +1,8 @@
+.footer {
+    gap: 0px;
+}
+
+#loading {
+    font-family: var(--bold-font);
+    font-size: 20px;
+}

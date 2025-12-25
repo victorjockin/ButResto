@@ -1,0 +1,22 @@
+#name {
+    width: var(--menu-item-name);
+}
+#creationDate {
+    display: flex;
+    width: var(--menu-item-creation-date);
+}
+#status {
+    display: flex;
+    width: var(--menu-item-status);
+}
+
+@media screen and (max-width: 720px) {
+    #creationDate {
+        display: none;
+    }
+}
+@media screen and (max-width: 576px) {
+    #status {
+        display: none;
+    }
+}

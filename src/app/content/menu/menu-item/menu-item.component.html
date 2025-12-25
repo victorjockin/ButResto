@@ -1,0 +1,23 @@
+<div class="item-container">
+  <div class="item menu clickable" [ngClass]="{ 'selected' : isSelected() }" (click)="onClick()">
+    <div id="id" class="item-id">#
+      <span *ngFor="let part of (menu.id | splitForHighlight:menusFilter)"
+        [class.highlighted]="part.highlighted">{{ part.text }}</span>
+    </div>
+    <div id="name" class="item-name" [ngClass]="{ 'name-only' : !displayDetails }">
+      <span *ngFor="let part of (menu.name | splitForHighlight:menusFilter)"
+        [class.highlighted]="part.highlighted">{{ part.text }}</span>
+    </div>
+    <div *ngIf="displayDetails" id="creationDate" class="item-info">
+      <span *ngFor="let part of (menu.creationDate | formatedDate | splitForHighlight:menusFilter)"
+        [class.highlighted]="part.highlighted">{{ part.text }}</span>
+    </div>
+    <div *ngIf="displayDetails" id="status" class="item-info">
+      <app-menu-status-badge [status]="menu.status"></app-menu-status-badge>
+    </div>
+  </div>
+  <div *ngIf="displayActions" class="item-actions">
+    <button class="item-action" (click)="onModify()"><i class="fa-solid fa-pen"></i></button>
+    <button class="item-action" (click)="onRemove()"><i class="fa-solid fa-trash"></i></button>
+  </div>
+</div>

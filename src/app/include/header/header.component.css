@@ -1,0 +1,107 @@
+header {
+    display: flex;
+    box-sizing: border-box;
+    padding: 0px var(--page-horizontal-padding);
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-color);
+    color: #fff;
+    font-size: var(--header-font-size);
+    z-index: 1000;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.app-name {
+    justify-content: center;
+    align-items: baseline;
+    font-family: var(--bold-font);
+    font-size: var(--app-name-font-size);
+}
+#appName {
+    display: none;
+}
+#appNameInNavBar {
+    display: flex;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+.pages {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-button {
+    display: flex;
+    gap: 10px;
+    font-size: var(--body-font-size);
+    cursor: pointer;
+}
+.header-button.selected {
+    text-decoration: underline;
+}
+
+.header-button .icon {
+    display: none;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: var(--options-font-size);
+}
+.header-button .text {
+    display: flex;
+}
+
+@media screen and (max-width: 540px) {
+    #appName {
+        display: flex;
+        width: 100%;
+        justify-content: left;
+    }
+    #appNameInNavBar {
+        display: none;
+    }
+    .nav-bar {
+        width: 100%;
+        justify-content: center;
+    }
+    .pages {
+        gap: 0px;
+    }
+    .header-button .icon {
+        display: flex;
+    }
+    .header-button .text {
+        display: none;
+    }
+    .header-button.selected {
+        background-color: var(--secondary-color-hover);
+        border-radius: var(--elements-border-radius);
+        text-decoration: none;
+    }
+    .options {
+        width: 100%;
+        justify-content: right;
+    }
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    font-size: var(--options-font-size);
+}

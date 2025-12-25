@@ -1,0 +1,103 @@
+<div *ngIf="this.loadingStatus != 'SUCCESS'" class="full-screen">
+  <app-loading-pop-up
+    [loadingStatus]="this.loadingStatus"
+    (loadingCompleted)="this.onLoadingCompleted()">
+  </app-loading-pop-up>
+</div>
+<div class="content" *ngIf="loadingStatus == 'SUCCESS'">
+  <h1>{{ 'content.menu.menus' | translate }}</h1>
+  <div class="search-bar">
+    <div id="buttons">
+      <app-drop-down-menu
+        id="statusFilterMenu"
+        [label]="'content.menu.status' | translate"
+        [options]="menuStatusFilterOptions"
+        [selectedOption]="menuStatusFilter"
+        (onSelectedOptionEvent)="onUpdateMenuStatusFilter($event)">
+      </app-drop-down-menu>
+      <app-drop-down-menu
+        id="creationDateFilterMenu"
+        [label]="'content.common.date' | translate"
+        [options]="menuCreationDateYearOptions"
+        [selectedOption]="menuCreationDateFilter"
+        (onSelectedOptionEvent)="onUpdateMenuCreationDateFilter($event)">
+      </app-drop-down-menu>
+      <button id="resetForSmallScreen" class="only-icon-button with-hover" (click)="onResetAllFilters()">
+        <div class="button-content"><i class="fa-solid fa-xmark"></i></div>
+      </button>
+    </div>
+    <div class="search-bar-input-field">
+      <input [(ngModel)]="keywords"
+        class="secondary-style"
+        placeholder="{{ 'content.common.keywords' | translate }}">
+      <button class="only-icon-button with-hover secondary" (click)="keywords = ''">
+        <i class="fa-solid fa-delete-left"></i>
+      </button>
+    </div>
+    <button id="resetForLargeScreen" class="only-icon-button with-hover" (click)="onResetAllFilters()">
+      <div class="button-content"><i class="fa-solid fa-xmark"></i></div>
+    </button>
+  </div>
+  <hr class="in-section-footer"/>
+  <div class="item-list-header">
+    <div>
+      <span *ngIf="menus.length == 1">
+        {{ menus.length }} {{ 'content.menu.saved-menu' | translate }}
+      </span>
+      <span *ngIf="menus.length > 1">
+        {{ menus.length }} {{ 'content.menu.saved-menus' | translate }}
+      </span>
+      <span *ngIf="!menus.length">{{ 'content.menu.no-menu-saved' | translate }}</span>
+      <span *ngIf="filteredMenus.length < menus.length">&nbsp;&mdash;&nbsp;</span>
+      <span *ngIf="filteredMenus.length && filteredMenus.length < menus.length"
+        class="italic">{{ filteredMenus.length }} {{ 'content.menu.displayed-menus' | translate }}
+      </span>
+      <span *ngIf="menus.length && !filteredMenus.length" class="italic">
+        {{ 'content.menu.no-menu-displayed' | translate }}
+      </span>
+    </div>
+    <a class="as-button with-icon-button with-hover" routerLink="/menu/new">
+      <div class="button-content">
+        <i class="fa-solid fa-plus button-icon"></i>
+        <span class="button-label">{{ 'content.menu.add' | translate }}</span>
+      </div>
+    </a>
+  </div>
+  <hr class="in-section-footer"/>
+  <div class="item-list" itemListAutoWidths>
+    <div *ngIf="menus.length" class="item-list-headers">
+      <div id="itemIdColumn" class="header"></div>
+      <div id="menuNameColumn" class="header">
+        {{ 'content.menu.menu' | translate }}
+      </div>
+      <div id="menuCreationDateColumn" class="header item-info">
+        {{ 'content.menu.creation-date' | translate }}
+      </div>
+      <div id="menuStatusColumn" class="header item-info">
+        {{ 'content.menu.status' | translate }}
+      </div>
+      <div id="itemActionsColumn" class="header"></div>
+    </div>
+    <div class="item-list-content">
+      <div *ngIf="!filteredMenus.length" class="empty-list">
+        {{ (menus.length && (menuStatusFilter || menuCreationDateFilter || keywords)
+            ? 'content.menu.no-menu-found'
+            : 'content.menu.no-menu-saved') | translate }}
+      </div>
+      <app-menu-item
+        *ngFor="let m of filteredMenus"
+        [menu]="m"
+        [menusFilter]="keywords"
+        (confirmRemovalEvent)="onConfirmRemoval($event)">
+      </app-menu-item>
+    </div>
+  </div>
+</div>
+<app-confirmation-dialog
+  [openDialogEvent]="openRemovalConfirmationDialogEvent"
+  (onConfirmEvent)="onDelete($event)">
+</app-confirmation-dialog>
+<app-processing-pop-up *ngIf="processing"
+  [processing]="processing"
+  [processingStatus]="processingStatus">
+</app-processing-pop-up>

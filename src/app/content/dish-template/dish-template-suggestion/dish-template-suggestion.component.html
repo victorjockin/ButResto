@@ -1,0 +1,4 @@
+<div class="suggestion">
+  <span *ngFor="let part of (this.dish.name | splitForHighlight:dishTemplatesFilter)"
+    [class.highlighted]="part.highlighted">{{ part.text }}</span>
+</div>

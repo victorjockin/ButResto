@@ -1,0 +1,11 @@
+<div class="pop-up loading-pop-up with-additional-vertical-padding"
+    [ngClass]="{'in'  : this.loadingStatus == 'LOADING', 
+                'out' : this.loadingStatus == 'LOADED'}">
+  <div class="pop-up-content centered-content">
+    <div class="spinner with-vertical-margins"></div>
+  </div>
+  <div class="pop-up-footer centered-content">
+    <span id="loading">{{ 'processing.loading' | translate }}...</span>
+    {{ 'processing.please-wait' | translate }}
+  </div>
+</div>

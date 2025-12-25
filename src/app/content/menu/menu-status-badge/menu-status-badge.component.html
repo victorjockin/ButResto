@@ -1,0 +1,5 @@
+<div class="badge unselectable"
+  [ngClass]="{'active-menu'   : status.toString() == 'ACTIVE',
+              'inactive-menu' : status.toString() == 'INACTIVE'}">
+  {{ 'content.menu.'+status.toLowerCase() | translate | uppercase }}
+</div>

@@ -1,0 +1,37 @@
+
+/* Fonts (typographies) */
+
+/* Date de dernière modification : Lundi 10 février 2025 */
+
+/* Auteur : Victor Jockin (Grp. 2B) */
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../assets/font/segoe-ui/Segoe\ UI.ttf') format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Segoe UI Italic';
+    src: url('../assets/font/segoe-ui/Segoe\ UI\ Italic.ttf') format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Segoe UI Bold';
+    src: url('../assets/font/segoe-ui/Segoe\ UI\ Bold.ttf') format('truetype');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Segoe UI Bold Italic';
+    src: url('../assets/font/segoe-ui/Segoe\ UI\ Bold\ Italic.ttf') format('truetype');
+    font-style: normal;
+}
+
+.important { 
+    font-family: var(--bold-font);
+}
+.italic {
+    font-family: var(--italic-font);
+}
+.italic .important {
+    font-family: var(--bold-italic-font);
+}

@@ -1,0 +1,20 @@
+<div class="drop-down-menu" (click)="options.length && toggleMenu()">
+  <button class="drop-down-menu-button standard-button"
+    [disabled]="!options.length">
+    <div class="button-content with-hover">
+      {{ (selectedOption ? (selectedOption | lowercase) : label) | translate }}
+    </div>
+    <div *ngIf="!selectedOption" class="button-icon with-hover">
+      <i [ngClass]="{ 'fa-angle-down' : !displayMenu,
+                      'fa-angle-up'   : displayMenu }" class="fa-solid"></i>
+    </div>
+    <div *ngIf="selectedOption" class="button-icon with-hover" (click)="onCleanSelection($event)">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+  </button>
+  <ul *ngIf="displayMenu" class="drop-down-menu-options">
+    <li *ngFor="let option of options"
+      [ngClass]="{ 'selected' : option == selectedOption }"
+      (click)="onSelectOption(option)">{{ option | lowercase | translate }}</li>
+  </ul>
+</div>

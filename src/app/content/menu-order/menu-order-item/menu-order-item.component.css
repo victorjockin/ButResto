@@ -1,0 +1,30 @@
+#menuName {
+  width: var(--menu-order-item-name);
+  align-items: center;
+  gap: 10px;
+}
+#status {
+  width: var(--menu-order-item-status);
+  justify-content: right;
+  align-items: center;
+  gap: var(--item-horizontal-gap);
+}
+#orderedAt {
+  display: flex;
+  flex-direction: row;
+}
+#orderedAtKey {
+  display: flex;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 700px) {
+  #orderedAtKey {
+    display: none;
+  }
+}
+@media screen and (max-width: 550px) {
+  #orderedAt {
+    display: none;
+  }
+}

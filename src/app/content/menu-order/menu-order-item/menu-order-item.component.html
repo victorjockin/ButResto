@@ -1,0 +1,32 @@
+<div>
+  <div class="item-container main-item">
+    <div class="item order">
+      <div id="menuName" class="item-name">
+        <span>{{ menuOrder.menuName }}&nbsp;</span>
+        <app-menu-order-id-badge
+          [id]="menuOrder.id">
+        </app-menu-order-id-badge>
+      </div>
+      <div id="status" class="item-info">
+        <div id="orderedAt" *ngIf="menuOrder.status=='NOT-SERVED'">
+          <span id="orderedAtKey">{{ 'content.order.ordered-at' | translate }}&nbsp;</span>
+          <span id="orderedAtValue">{{ menuOrder.orderedAt | date: 'HH:mm' }}</span>
+        </div>
+        <app-order-status-badge [status]="menuOrder.status"></app-order-status-badge>
+      </div>
+    </div>
+    <div class="item-actions">
+      <button *ngIf="menuOrder.status=='NOT-SERVED'" class="item-action" (click)="onMarkAsServed()">
+        <i class="fa-solid fa-check"></i>
+      </button>
+      <button *ngIf="menuOrder.status=='SERVED'" class="item-action" (click)="onClose()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+  </div>
+  <app-dish-order-list
+    [orderId]="menuOrder.id"
+    [dishes]="menuOrder.dishes"
+    (onDishMarkedAsServedEvent)="onDishMarkedAsServed($event)">
+  </app-dish-order-list>
+</div>

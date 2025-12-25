@@ -1,0 +1,27 @@
+<div #mainContainer class="hero box">
+  <div class="grid">
+    <div *ngFor="let c of cols ; let ci = index" class="column">
+      <div *ngFor="let r of rows ; let ri = index">
+        <i [ngClass]="'fa-solid '+icons[
+          (ci*rows.length+ri)%icons.length
+        ]+' group-'+getGroup(ci, ri)"></i>
+      </div>
+    </div>  
+  </div>
+  <div #centerSection id="mainContent" class="center-section unselectable">
+    <div id="restoAndSlogan">
+      <span id="resto">ButResto <i class="fa-solid fa-burger"></i></span>
+      <span id="slogan">{{ 'content.restaurant.slogan' | translate }}</span>
+    </div>
+    <span id="opening">~ {{ 'content.restaurant.opening' | translate }} ~</span>
+  </div>
+  <div class="grid">
+    <div *ngFor="let c of cols ; let ci = index" class="column">
+      <div *ngFor="let r of rows ; let ri = index">
+        <i [ngClass]="'fa-solid '+icons[
+          (ci*rows.length+ri)%icons.length
+        ]+' group-'+getGroup(ci, ri)"></i>
+      </div>
+    </div>  
+  </div>
+</div>

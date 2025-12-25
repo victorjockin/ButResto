@@ -1,0 +1,36 @@
+
+/* Badges */
+
+/* Date de dernière modification : Dimanche 16 février 2025 */
+
+/* Auteur : Victor Jockin (Grp. 2B) */
+
+.badge {
+    display: flex;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    width: var(--menu-status-badge-width);
+    height: var(--item-content-element-height);
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--elements-border-radius);
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: var(--badge-font-size);
+    white-space: nowrap;
+}
+.badge.small {
+    width: fit-content;
+    height: var(--item-small-content-element-height);
+    font-size: var(--small-badge-font-size);
+}
+.badge.order {
+    background-color: var(--order-color);
+}
+
+.active-menu {
+    background-color: var(--active-menu-color);
+}
+.inactive-menu {
+    background-color: var(--inactive-menu-color);
+}

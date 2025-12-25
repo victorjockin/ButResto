@@ -1,0 +1,10 @@
+<div class="badge small unselectable"
+  [ngClass]="{'served-order'     : status.toString() == 'SERVED',
+              'not-served-order' : status.toString() == 'NOT-SERVED'}">
+  <span *ngIf="!servedAt">
+    {{ 'content.order.'+status.toString().toLowerCase() | translate | uppercase }}
+  </span>
+  <span *ngIf="servedAt">
+    {{ 'content.order.served-at' | translate | uppercase }} {{ servedAt | date: 'HH:mm' }}
+  </span>
+</div>

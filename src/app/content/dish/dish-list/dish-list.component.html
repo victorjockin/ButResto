@@ -1,0 +1,75 @@
+<div class="item-list section-gap-md" itemListAutoWidths>
+  <div class="item-list-header">
+    <span *ngIf="dishes.length == 0">{{ 'content.dish.no-dish' | translate }}</span>
+    <span *ngIf="dishes.length == 1">1 {{ 'content.dish.dish' | translate | lowercase }}</span>
+    <span *ngIf="dishes.length > 1">
+      {{ dishes.length }} {{ 'content.dish.dishes' | translate | lowercase }}
+    </span>
+    <button class="with-icon-button with-hover" (click)="onAddDish()">
+      <div class="button-content">
+        <i class="fa-solid fa-plus"></i><span class="button-label">
+          {{ 'content.dish.add' | translate }}
+        </span>
+      </div>
+    </button>
+  </div>
+  <hr *ngIf="dishes.length || addingDish" class="section-hr medium-hr"/>
+  <div *ngIf="dishes.length || addingDish" class="item-list-group">
+    <div *ngIf="dishes.length > 0" class="item-list-headers">
+      <div id="dishNameColumn" class="header">
+        {{ 'content.dish.dish' | translate }}
+      </div>
+      <div id="dishCaloriesColumn" class="header item-info">
+        {{ 'content.dish.calories' | translate }}
+      </div>
+      <div id="itemActionsColumn" class="header"></div>
+    </div>
+    <app-dish-item *ngIf="addingDish"
+      [dish]="newDish"
+      (dishNameInputChangesEvent)="dishTemplatesFilter = $event"
+      (addingDishFinishedEvent)="addingDish = false"
+      (updateDishesToAddEvent)="onUpdateDishesToAdd()"
+      (processingStartedEvent)="onProcessing($event)"
+      [processingCompletedEvent]="processingCompletedEvent">
+    </app-dish-item>
+    <app-dish-template-list *ngIf="addingDish"
+      [dishTemplates]="filteredDishTemplates"
+      [dishTemplatesFilter]="dishTemplatesFilter"
+      (dishTemplateSelectedEvent)="onDishTemplateSelected($event)">
+    </app-dish-template-list>
+    <hr *ngIf="addingDish && dishes.length > 0" class="item-list-hr">
+    <div *ngIf="dishes.length > 0" class="item-list-content">
+      <app-dish-item *ngFor="let d of dishes"
+        [dish]="d"
+        (updateDishesToAddEvent)="onUpdateDishesToAdd()"
+        (processingStartedEvent)="onProcessing($event)"
+        [processingCompletedEvent]="processingCompletedEvent">
+      </app-dish-item>
+    </div>
+  </div>
+  <hr class="section-hr">
+  <div id="stats" class="key-value-list section-gap-sm">
+    <div class="key-value-group">
+      <div class="key">{{ 'content.dish.stats.average-calories' | translate }}</div>
+      <div class="value">{{ menuCaloriesPerDish }} cal</div>  
+    </div>
+    <div class="key-value-group">
+      <div class="key">{{ 'content.dish.stats.total-calories' | translate }}</div>
+      <div class="value">{{ menuCalories }} cal</div>
+    </div>
+  </div>
+  <div id="statsShort" class="key-value-list section-gap-sm">
+    <div class="key-value-group">
+      <div class="key">{{ 'content.dish.stats.average' | translate }}</div>
+      <div class="value">{{ menuCaloriesPerDish }} cal</div>  
+    </div>
+    <div class="key-value-group">
+      <div class="key">{{ 'content.dish.stats.total' | translate }}</div>
+      <div class="value">{{ menuCalories }} cal</div>
+    </div>
+  </div>
+</div>
+<app-processing-pop-up *ngIf="processing"
+  [processing]="processing"
+  [processingStatus]="processingStatus">
+</app-processing-pop-up>

@@ -1,0 +1,77 @@
+<div class="content">
+  <div class="section section-gap-md">
+    <div class="section-title">
+      <h1>{{ 'content.order.today-s-orders' | translate }}</h1>
+      <hr class="thick-hr"/>
+    </div>
+    <div class="item-list-header">
+      <div id="counts">
+        <span *ngIf="!orders.length">{{ 'content.order.no-order-saved' | translate }}</span>
+        <span *ngIf="orders.length == 1">
+          1 {{ 'content.order.order' | translate | lowercase }}
+        </span>
+        <span *ngIf="orders.length > 1">
+          {{ orders.length }} {{ 'content.order.orders' | translate | lowercase }}
+        </span>
+        <div *ngIf="ordersToServe.length">
+          &nbsp;&mdash;&nbsp;<span *ngIf="ordersToServe.length == 1">1 {{ 'content.order.one-order-to-serve' | translate | lowercase }}</span><span *ngIf="ordersToServe.length > 1">{{ ordersToServe.length }} {{ 'content.order.orders-to-serve' | translate | lowercase }}</span>
+        </div>
+      </div>
+      <a class="as-button with-icon-button with-hover" (click)="onAddANewOrder()">
+        <div class="button-content">
+          <i class="fa-solid fa-plus button-icon"></i>
+          <span class="button-label">{{ 'content.order.add' | translate }}</span>
+        </div>
+      </a>
+    </div>
+    <hr class="in-section-footer"/>
+    <div class="item-list">
+      <div *ngIf="ordersToServe.length" class="item-list-header">
+        <div class="item-list-headers">
+          <div class="header">
+            <i class="fa-solid fa-utensils"></i>&nbsp;
+            {{ 'content.order.orders-to-serve' | translate }}
+          </div>
+        </div>
+        <button class="small with-hover" (click)="onClearOrdersToServe()">
+          {{ 'actions.clear' | translate }}
+        </button>
+      </div>
+      <div class="item-list-content">
+        <div *ngIf="!ordersToServe.length" class="empty-list">
+          {{ 'content.order.no-order-to-serve' | translate }}
+        </div>
+        <app-menu-order-item
+          *ngFor="let o of ordersToServe"
+          [menuOrder]="o"
+          (onMarkAsServedEvent)="onOrderMarkedAsServed($event)"
+          (onDishMarkedAsServedEvent)="onDishMarkedAsServed($event)"
+          (onCloseEvent)="onOrderClosed($event)">
+        </app-menu-order-item>
+      </div>
+    </div>
+    <hr *ngIf="ordersServed.length" class="in-section-footer"/>
+    <div *ngIf="ordersServed.length" class="item-list">
+      <div class="item-list-header">
+        <div class="item-list-headers">
+          <div class="header">
+            <i class="fa-regular fa-circle-check"></i>&nbsp;
+            {{ 'content.order.orders-served' | translate }}
+          </div>
+        </div>
+        <button class="small with-hover" (click)="onClearOrdersServed()">
+          {{ 'actions.clear' | translate }}
+        </button>
+      </div>
+      <div class="item-list-content">
+        <app-menu-order-item
+          *ngFor="let o of ordersServed"
+          [menuOrder]="o"
+          (onMarkAsServedEvent)="onOrderMarkedAsServed($event)"
+          (onDishMarkedAsServedEvent)="onDishMarkedAsServed($event)"
+          (onCloseEvent)="onOrderClosed($event)">
+        </app-menu-order-item>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+#menuNameIdAndStatus {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+#menuNameAndId {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 10px;
+}
+#menuId {
+    font-size: 22px;
+}
+#menuStatusBadgeContainer {
+    display: flex;
+    height: 45px;
+    align-items: center;
+}

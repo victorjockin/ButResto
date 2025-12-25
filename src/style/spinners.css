@@ -1,0 +1,19 @@
+
+/* Spinners */
+
+/* Date de dernière modification : Dimanche 23 février 2025 */
+
+/* Auteur : Victor Jockin (Grp. 2B) */
+
+.spinner {
+    width: var(--spinner-size);
+    height: var(--spinner-size);
+    border: 5px solid var(--spinner-color-1);
+    border-top: 5px solid var(--spinner-color-2);
+    border-radius: 50%;
+    animation: spin 1s linear infinite; 
+}
+.spinner.with-vertical-margins {
+    box-sizing: border-box;
+    margin: 2rem 0rem 2rem 0rem;
+}

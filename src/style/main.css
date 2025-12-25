@@ -1,0 +1,268 @@
+
+/* Styles principaux */
+
+/* Date de dernière modification : Dimanche 16 février 2025 */
+
+/* Auteur : Victor Jockin (Grp. 2B) */
+
+html {
+    font-family: var(--regular-font) ;
+    font-size: var(--body-font-size);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    background-color: var(--app-background-color);
+    color: var(--app-text-color);
+}
+
+app-root {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+app-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.main-content {
+    flex: 1;
+    box-sizing: border-box;
+    padding: var(--page-vertical-padding) var(--page-horizontal-padding) var(--page-vertical-padding-plus) var(--page-horizontal-padding) ;
+    overflow-y: auto;
+}
+
+.loading-pop-up-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+app-footer {
+    margin-top: auto;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ====================================================================== */
+
+/* containers */
+/* ---------- */
+
+.h-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.full-screen {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ====================================================================== */
+
+/* sections */
+/* -------- */
+
+h1, h2, h3 {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+h1 {
+    margin: 0px;
+    margin-top: 20px;
+    font-family: var(--bold-font);
+    font-size: var(--h1-font-size);
+    line-height: 45px;
+}
+h2 {
+    margin: 0px;
+    margin-top: 15px;
+    font-family: var(--bold-font);
+    font-size: var(--h2-font-size);
+}
+h3 {
+    margin: 0px;
+    margin-top: 10px;
+    font-family: var(--bold-font);
+    font-size: var(--h3-font-size);
+}
+h4 {
+    margin: 0px;
+    margin-top: 5px;
+    font-family: var(--bold-font);
+    font-size: var(--h4-font-size);
+}
+
+hr {
+    display: flex;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    border-radius: var(--elements-border-radius);
+    border-style: solid;
+    border-color: #fff;
+}
+hr.thick-hr {
+    border-width: 1px
+}
+hr.thin-hr {
+    border-width: 0.5px
+}
+hr.section-hr {
+    border: 0.5px solid var(--neutral-color-l);
+}
+hr.v-hr {
+    height: 100%;
+    width: 0px;
+}
+hr.in-button-hr {
+    border-color: var(--primary-color-d);
+}
+hr.in-section-footer {
+    border: 0.5px solid var(--neutral-color-l);
+}
+
+hr.in-pop-up {
+    border: 0.5px solid var(--neutral-color-d);
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--section-vertical-gap);
+}
+.section-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.section-footer {
+    display: flex;
+    flex-direction: var(--section-footer-direction);
+    gap: 1rem;
+}
+.section-footer .as-button {
+    padding: 0px;
+    width: 100%;
+}
+.section-footer .options {
+    display: flex;
+    flex-direction: var(--section-footer-options-direction);
+    gap: 0.5rem;
+}
+
+.section-medium { width: var(--medium-section-width); }
+
+.section-gap-sm { gap: 0.5rem; }
+.section-gap-md { gap: 1rem; }
+.section-gap-lg { gap: 2rem; }
+
+p {
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* ====================================================================== */
+
+/* flag icons */
+/* ---------- */
+
+.flag-icon-container {
+    display: flex;
+    position: relative;
+}
+.flag-icon-container.selected::after {
+    content: "";
+    position: absolute;
+    top: -4.5px;
+    right: -4.5px;
+    width: 5px;
+    height: 5px;
+    background-color: var(--primary-color-l);
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+.flag-icon {
+    width: 30px;
+}
+
+/* ====================================================================== */
+
+/* key-value lists */
+/* --------------- */
+
+.key-value-list {
+    display: flex;
+    flex-direction: column;
+}
+.key-value-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.key {
+    font-family: var(--bold-font);
+}
+
+/* ====================================================================== */
+
+/* components */
+/* ---------- */
+
+app-menu-edition-form {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+/* ====================================================================== */
+
+/* attributs */
+/* --------- */
+
+.centered-content {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.unselectable {
+    user-select: none;
+}
+
+.highlighted {
+    background-color: #ffff00;
+    color: #000;
+}
+
+.checked {
+    color: var(--validate-color);
+}

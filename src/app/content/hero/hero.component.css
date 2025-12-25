@@ -1,0 +1,25 @@
+#mainContent, #restoAndSlogan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#mainContent {
+  gap: 40px;
+}
+#restoAndSlogan {
+  gap: 5px;
+}
+#resto {
+  font-family: var(--bold-font);
+  font-size: 40px;
+}
+#slogan {
+  font-family: var(--regular-font);
+  font-size: 26px;
+}
+#opening {
+  font-family: var(--bold-italic-font);
+  font-size: 20px;
+}

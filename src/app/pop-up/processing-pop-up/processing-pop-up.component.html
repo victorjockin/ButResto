@@ -1,0 +1,15 @@
+<div [ngClass]="{ 'in'  : this.processingStatus == 'PROCESSING',
+                  'out' : this.processingStatus == 'PROCESSED' }"
+    class="pop-up-background">
+  <div [ngClass]="{ 'in'  : this.processingStatus == 'PROCESSING',
+                    'out' : this.processingStatus == 'PROCESSED' }"
+    class="pop-up loading-pop-up with-additional-vertical-padding centered-content">
+    <div class="spinner with-vertical-margins"></div>
+    <div>
+      <span id="processing">{{ Processing.getTranslationKey(this.processing) | translate }}
+        {{ 'processing.in-progress' | translate }}...
+      </span>
+      <div>{{ 'processing.please-wait' | translate }}</div>
+    </div>
+  </div>
+</div>

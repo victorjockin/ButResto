@@ -1,0 +1,42 @@
+#buttons {
+    display: flex;
+    flex-direction: row;
+    gap: var(--search-bar-h-gap);
+}
+
+#resetForLargeScreen {
+    display: flex;
+}
+#resetForSmallScreen {
+    display: none;
+}
+
+#menuNameColumn {
+    width: var(--menu-item-name);
+}
+#menuCreationDateColumn {
+    display: flex;
+    width: var(--menu-item-creation-date);
+}
+#menuStatusColumn {
+    display: flex;
+    width: var(--menu-item-status);
+}
+
+@media screen and (max-width: 720px) {
+    #menuCreationDateColumn {
+        display: none;
+    }
+}
+@media screen and (max-width: 576px) {
+    #resetForLargeScreen {
+        display: none;
+    }
+    #resetForSmallScreen {
+        display: flex;
+    }
+    
+    #menuStatusColumn {
+        display: none;
+    }
+}

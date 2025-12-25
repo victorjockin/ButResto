@@ -1,16 +1,13 @@
-
-<div class="container">
-
-  <h1>ButResto <i class="fa-solid fa-burger"></i></h1>
-  <h2>le resto qu'il vous faut ! </h2>
-
-
-  <p>
-
-     Ouverture prochaine !<br>
-     Les étudiants travaillent activement sur le projet...
-  </p>
-
-  <router-outlet />
-
-</div>
+<ng-container *ngIf="router.url !== '/12' ; else singleComponent">
+  <app-header></app-header>
+  <main>
+    <app-hero *ngIf="router.url == '/'"></app-hero>
+    <div class="main-content">
+      <router-outlet/>
+    </div>
+  </main>
+  <app-footer></app-footer>
+</ng-container>
+<ng-template #singleComponent>
+  <router-outlet></router-outlet>
+</ng-template>

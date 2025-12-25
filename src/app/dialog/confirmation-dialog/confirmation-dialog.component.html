@@ -1,0 +1,24 @@
+<div *ngIf="displayDialog"
+  [ngClass]="{ 'in'  : this.dialogState == 'PENDING',
+               'out' : this.dialogState != 'PENDING' }"
+  class="pop-up-background"
+  (click)="onCancel()">
+  <div [ngClass]="{ 'in'  : this.dialogState == 'PENDING',
+                    'out' : this.dialogState != 'PENDING' }"
+    class="pop-up confirmation-dialog"
+    (click)="$event.stopPropagation()">
+    <div class="pop-up-header centered-content">{{ title | translate }}</div>
+    <hr class="in-pop-up"/>
+    <div id="content" class="pop-up-content centered-content"
+      [innerHTML]="message | translate"></div>
+    <hr class="in-pop-up"/>
+    <div class="pop-up-footer dialog-options">
+      <button (click)="onConfirm()" class="dialog-option with-hover secondary">
+        {{ confirmLabel | translate }}
+      </button>
+      <button (click)="onCancel()" class="dialog-option with-hover">
+        {{ cancelLabel | translate }}
+      </button>
+    </div>
+  </div>
+</div>

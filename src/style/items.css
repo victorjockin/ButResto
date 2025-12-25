@@ -1,0 +1,236 @@
+
+/* Items */
+
+/* Date de dernière modification : Dimanche 16 février 2025 */
+
+/* Auteur : Victor Jockin (Grp. 2B) */
+
+/* items */
+/* ----- */
+
+.item-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding: 0px var(--item-horizontal-padding);
+    gap: var(--item-horizontal-gap);
+    width: 100%;
+    height: var(--item-height);
+    border-left: var(--item-border-left-width) var(--primary-color);
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--neutral-color-l);
+    font-size: var(--body-font-size);
+}
+.item.clickable {
+    cursor: pointer;
+}
+.item.small {
+    height: var(--small-item-height);
+    font-size: var(--small-item-font-size);
+}
+.item:hover {
+    background-color: var(--neutral-color-l-hover);
+}
+
+.item.menu {
+    border-left: var(--item-border-left-width) var(--menu-color);
+}
+.item.menu.selected {
+    background-color: var(--menu-color);
+}
+.item.menu.selected:hover {
+    background-color: var(--menu-color);
+}
+
+.item.order {
+    border-left: var(--item-border-left-width) var(--order-color);
+}
+
+.view-mode .item {
+    border-left: var(--item-border-left-width) var(--view-mode-color);
+}
+.addition-mode .item {
+    border-left: var(--item-border-left-width) var(--addition-mode-color);
+}
+.edition-mode .item {
+    border-left: var(--item-border-left-width) var(--edition-mode-color);
+}
+.deletion-mode .item {
+    border-left: var(--item-border-left-width) var(--deletion-mode-color);
+}
+
+.item-id {
+    display: flex;
+    width: fit-content;
+    justify-content: right;
+}
+.item-name {
+    display: flex;
+    justify-content: left;
+}
+.item-name.name-only {
+    width: 100% !important;
+}
+.item-info {
+    display: flex;
+    justify-content: center;
+}
+
+.item input {
+    box-sizing: border-box;
+    padding: 0px 10px;
+    width: 100%;
+    min-height: var(--item-content-element-height);
+    border-color: #888;
+    background-color: var(--neutral-color-d);
+}
+.item input:-webkit-autofill {
+    background-color: #121212;
+    -webkit-text-fill-color: #fff;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.item-actions {
+    display: flex;
+    flex-direction: row;
+}
+.item-action {
+    display: flex;
+    width: var(--item-action-width);
+    height: var(--item-height);
+    border-radius: 0px;
+    background-color: var(--neutral-color-d);
+    color: #888;
+    font-size: var(--item-action-font-size);
+}
+.item-action:hover {
+    background-color: #000;
+    color: #fff;
+}
+.item-action:disabled {
+    background-color: var(--neutral-color-d);
+    color: var(--neutral-color-l);
+    pointer-events: none;
+}
+.item-action.inert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--neutral-color-d);
+    color: #888;
+}
+
+.main-item, .child-item {
+    cursor: auto;
+}
+.main-item {
+    background-color: var(--neutral-color-d);
+}
+.main-item:hover {
+    background-color: var(--neutral-color-d-hover);
+}
+.main-item .item, .main-item .item-action {
+    background-color: transparent;
+}
+.child-item .item, .child-item .item-action {
+    background-color: var(--neutral-color-l);
+}
+
+/* ====================================================================== */
+
+/* suggestions */
+/* ----------- */
+
+.suggestion-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+.suggestion {
+    display: flex;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    width: fit-content;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--elements-border-radius);
+    background-color: var(--neutral-color-d);
+    color: #888;
+    font-size: var(--suggestion-font-size);
+    user-select: none;
+}
+.suggestion:hover {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ====================================================================== */
+
+/* item lists */
+/* ---------- */
+
+.item-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--item-list-vertical-gap);
+}
+
+.item-list-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--item-list-vertical-gap);
+}
+
+.empty-list {
+    display: flex;
+    height: var(--item-height);
+    justify-content: center;
+    align-items: center;
+    border: var(--form-field-border);
+}
+
+.item-list-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--item-list-vertical-gap);
+}
+
+.item-list-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-list-headers {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding: 0px;
+    padding-left: var(--item-horizontal-padding);
+    gap: var(--item-horizontal-gap);
+    border-left: var(--item-border-left-width) var(--app-background-color);
+}
+
+.item-list-headers .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.item-list-hr {
+    border: 0.5px solid var(--neutral-color-d);
+}

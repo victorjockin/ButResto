@@ -1,0 +1,7 @@
+<app-dish-order-item
+  *ngFor="let d of dishes; let i = index"
+  [orderId]="orderId"
+  [dishOrder]="d"
+  (onMarkAsServedEvent)="onDishMarkedAsServed($event)"
+  [ngClass]="{ 'odd' : i % 2 != 0 }">
+</app-dish-order-item>

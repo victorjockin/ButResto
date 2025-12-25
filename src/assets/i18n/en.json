@@ -1,0 +1,94 @@
+{
+  "navigation": {
+    "home": "Home",
+    "back": "Back"
+  },
+  "actions": {
+    "add": "Add",
+    "modify": "Modify",
+    "modifying": "Modifying",
+    "save": "Save",
+    "remove": "Remove",
+    "cancel": "Cancel",
+    "clear": "Clear",
+    "confirm-removal": "Confirm removal"
+  },
+  "processing": {
+    "addition": "Addition",
+    "update": "Update",
+    "deletion": "Deletion",
+    "loading": "Loading",
+    "in-progress": "in progress",
+    "please-wait": "Please wait a moment"
+  },
+  "content": {
+    "restaurant": {
+      "slogan": "The rest-o-rant you need!",
+      "opening": "Opening soon"
+    },
+    "dish": {
+      "dish": "Dish",
+      "dishes": "Dishes",
+      "templates": "Dish templates",
+      "calories": "Calories",
+      "stats": {
+        "average-calories": "Average number of calories per dish",
+        "average": "Average",
+        "total-calories": "Total number of calories",
+        "total": "Total"
+      },
+      "add": "Add a new dish",
+      "remove": "Remove the dish",
+      "no-dish": "No dish saved",
+      "enter-name": "Enter the dish name",
+      "enter-calories": "Cal."
+    },
+    "menu": {
+      "menu": "Menu",
+      "menus": "Menus",
+      "menu-number": "Menu number",
+      "name": "Name",
+      "enter-name": "Enter the menu name",
+      "description": "Description",
+      "enter-description": "Enter a description",
+      "creation-date": "Creation date",
+      "created-on": "Created on",
+      "status": "Status",
+      "active": "Active",
+      "inactive": "Inactive",
+      "composition": "Menu composition",
+      "add": "Add a new menu",
+      "confirm-removal-message": "Are you sure you want to remove menu<br/>#{{id}}: {{name}}?",
+      "new": "New menu",
+      "saved-menus": "saved menus",
+      "displayed-menus": "menus displayed",
+      "no-menu-saved": "No menu saved",
+      "no-menu-found": "No menu found",
+      "no-menu-displayed": "No menu displayed"
+    },
+    "order": {
+      "order": "Order",
+      "orders": "Orders",
+      "today-s-orders": "Today's orders",
+      "status": "Status",
+      "served": "Served",
+      "not-served": "Not served",
+      "ordered-at": "Ordered at",
+      "served-at": "Served at",
+      "add": "Add a new order",
+      "no-order-saved": "No order saved",
+      "no-order-to-serve": "No order to serve",
+      "one-order-to-serve": "order to serve",
+      "orders-to-serve": "Orders to serve",
+      "orders-served": "Orders served"
+    },
+    "footer": {
+      "rights": "All rights reserved",
+      "developed-by": "Developed by"
+    },
+    "common": {
+      "date": "Date",
+      "keywords": "Keywords"
+    }
+  }
+}

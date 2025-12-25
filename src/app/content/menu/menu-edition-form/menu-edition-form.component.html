@@ -1,0 +1,82 @@
+<div class="centered-content">
+  <div *ngIf="loadingStatus != 'SUCCESS'" class="full-screen">
+    <app-loading-pop-up
+      [loadingStatus]="loadingStatus"
+      (loadingCompleted)="onLoadingCompleted()">
+    </app-loading-pop-up>
+  </div>
+  <div *ngIf="loadingStatus == 'SUCCESS'" class="section section-gap-lg form-container">
+    <div class="section-title">
+      <h2 *ngIf="mode == 'ADDITION-MODE'">{{ 'content.menu.new' | translate }}</h2>
+      <h2 *ngIf="mode == 'EDITION-MODE'">
+        {{ 'actions.modifying' | translate }} "{{ menuOriginalName }}"
+      </h2>
+      <hr/>
+    </div>
+    <form #form="ngForm">
+      <div class="form-fields">
+        <div class="form-group">
+          <label>{{ 'content.menu.menu-number' | translate }} &ast;</label>
+          <input id="id" name="id" type="text" [(ngModel)]="menu.id"
+            readonly required>
+        </div>
+        <div class="form-group">
+          <label>{{ 'content.menu.name' | translate }} &ast;</label>
+          <input id="name" name="name" type="text"
+            placeholder="{{ 'content.menu.enter-name' | translate }}"
+            [(ngModel)]="menu.name" required>
+        </div>
+        <div class="form-group">
+          <label>{{ 'content.menu.description' | translate }}</label>
+          <textarea id="description" name="description" rows="3"
+            placeholder="{{ 'content.menu.enter-description' | translate }}"
+            [(ngModel)]="menu.description"></textarea>
+        </div>
+        <div class="form-group">
+          <label>{{ 'content.menu.creation-date' | translate }} &ast;</label>
+          <input id="creationDate"name="creationDate" type="date"
+            [max]="dateService.getCurrentDate()" 
+            [(ngModel)]="menu.creationDate" required>
+        </div>
+        <div class="form-group">
+          <label>{{ 'content.menu.status' | translate }} &ast;</label>
+          <select id="status" name="status" [(ngModel)]="menu.status" required>
+            <option value="ACTIVE">{{ 'content.menu.active' | translate }}</option>
+            <option value="INACTIVE">{{ 'content.menu.inactive' | translate }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="section section-gap-md">
+        <div class="section-title">
+          <h3>{{ 'content.menu.composition' | translate }}</h3>
+          <hr class="thin-hr"/>
+        </div>
+        <app-dish-list
+          [dishes]="menuDishes && menuDishes.length ? menuDishes : []"
+          [dishTemplates]="dishTemplates">
+        </app-dish-list>
+      </div>
+      <div class="section-footer">
+        <div class="form-actions options">
+          <button class="as-button with-hover secondary" type="submit" [disabled]="!form.valid"
+            (click)="onSaveMenu(form)">
+            <span *ngIf="mode == 'ADDITION-MODE'">{{ 'actions.add' | translate }}</span>
+            <span *ngIf="mode == 'EDITION-MODE'">{{ 'actions.save' | translate }}</span>
+          </button>
+          <a *ngIf="mode == 'ADDITION-MODE'"
+            class="as-button with-hover" [routerLink]="'/menus'">
+            {{ 'actions.cancel' | translate }}
+          </a>
+          <button *ngIf="mode == 'EDITION-MODE'"
+            class="as-button with-hover" type="button" (click)="onCancel()">
+            {{ 'actions.cancel' | translate }}
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<app-processing-pop-up *ngIf="processing"
+  [processing]="processing"
+  [processingStatus]="processingStatus">
+</app-processing-pop-up>

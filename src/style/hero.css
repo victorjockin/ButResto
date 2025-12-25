@@ -1,0 +1,38 @@
+.hero {
+  display: flex;
+  box-sizing: border-box;
+  padding: var(--hero-padding);
+  width: 100vw;
+  justify-content: space-between;
+  background-color: var(--primary-color-l);
+  color: #fff;
+}
+.hero .grid {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.hero .center-section {
+  padding: 1rem 3rem;
+}
+.hero .column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+.hero .column i {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  font-size: 38px;
+  color: #66CC66;
+  opacity: 0;
+  animation: fadeInOut 8s linear infinite;
+}
+@keyframes fadeInOut {
+  0%, 50%, 100% { opacity: 0; transform: scale(0.5); }
+  25% { opacity: 1; transform: scale(1); }
+}

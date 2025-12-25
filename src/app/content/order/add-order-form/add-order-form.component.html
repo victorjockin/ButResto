@@ -1,0 +1,37 @@
+<div *ngIf="this.loadingStatus != 'SUCCESS'" class="full-screen">
+  <app-loading-pop-up
+    [loadingStatus]="this.loadingStatus"
+    (loadingCompleted)="this.onLoadingCompleted()">
+  </app-loading-pop-up>
+</div>
+<div class="centered-content">
+  <div *ngIf="this.loadingStatus == 'SUCCESS'" class="section section-medium section-gap-lg">
+    <div class="section-title">
+      <h1>{{ 'content.order.add' | translate }}</h1>
+      <hr class="thick-hr"/>
+    </div>
+    <div class="item-list">
+      <div class="item-list-content">
+        <app-menu-item
+          *ngFor="let m of menus"
+          [menu]="m"
+          (menuSelected)="onMenuSelected($event)">
+        </app-menu-item>
+      </div>
+    </div>
+    <div class="section-footer">
+      <div class="options">
+        <button class="as-button with-hover secondary" [disabled]="!isAMenuSelected()" (click)="onAdd()">
+          {{ 'actions.add' | translate }}
+        </button>
+        <button class="as-button with-hover" (click)="onCancel()">
+          {{ 'actions.cancel' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-processing-pop-up *ngIf="this.processing"
+  [processing]="this.processing"
+  [processingStatus]="this.processingStatus">
+</app-processing-pop-up>
