@@ -8,6 +8,12 @@ Victor Jockin – Groupe 2B
 :toclevels: 3
 :sectnums:
 
+[IMPORTANT]
+====
+📄 *Document original (PDF)*  
+Lien : link:Document_de_conception.pdf[Document de conception – PDF]
+====
+
 == Fonctionnalités développées
 
 === Fonctionnalités minimales
@@ -204,3 +210,4 @@ L’en-tête de l’application permet d’accéder aux pages :
 | Nouvelle commande
 | Ajouter / Annuler → Commandes
 |===
+
