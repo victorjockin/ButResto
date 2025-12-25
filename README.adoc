@@ -10,15 +10,8 @@ Victor Jockin – Groupe 2B
 
 [IMPORTANT]
 ====
-📄 *Document original (PDF)*  
+Le contenu du présent README est également consultable au format PDF :
 https://github.com/victorjockin/ButResto/blob/main/Document%20de%20conception.pdf[Document de conception – PDF]
-====
-
-.Exporter le document original
-====
-Ce document est issu du fichier PDF officiel.
-
-* PDF : link:Document_de_conception.pdf[Document de conception]
 ====
 
 == Fonctionnalités développées
@@ -217,6 +210,7 @@ L’en-tête de l’application permet d’accéder aux pages :
 | Nouvelle commande
 | Ajouter / Annuler → Commandes
 |===
+
 
 
 
